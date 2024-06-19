@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useState } from 'react'
+import Logo from './img/logo.png'
+import Search from './img/search.svg'
 
 function App() {
+  
+  const [value, setValue] = useState('');
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault()
+    window.location.href = `https://www.google.com/search?q=${value}`
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main'>
+      <img className='logo' src={Logo} />
+      <form className='searchbar' onSubmit={onSubmitHandler}>
+        <img className='search' src={Search} />
+        <input type="text" placeholder="Search ...."
+                value={value} onChange={(e) => setValue(e.target.value)} />
+      </form>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
