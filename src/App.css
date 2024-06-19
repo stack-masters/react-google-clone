@@ -35,5 +35,16 @@
   border: none;
   outline: none;
   font-size: 16px;
-  width: 90%;
+  width: 75%;
+}
+
+.mic {
+  width: 26px;
+  cursor: pointer; 
+}
+
+.camera {
+  width: 26px;
+  font-size: 16px;
+  cursor: pointer;
 }
